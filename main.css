@@ -1,0 +1,33 @@
+body{
+ overflow-x: hidden;
+    background-image: url("https://github.com/TylerPottsDev/weather-app-js/blob/master/bg.jpg?raw=true");
+}
+
+
+.search{
+    position: relative;
+    left: 45%;
+    top:50px;
+}
+
+
+/* Grow */
+.hvrgrow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.7s;
+    transition-property: transform;
+  }
+  
+  .hvrgrow:hover,
+  .hvrgrow:focus,
+  .hvrgrow:active {
+    transform: scale(1.2);
+  }
+  
+
+
