@@ -10,6 +10,14 @@ body{
     top:50px;
 }
 
+.Info{
+  text-align: center;
+  margin-top: 100px;
+}
+.weather{
+  margin-top: 30px;
+}
+
 
 /* Grow */
 .hvrgrow {
