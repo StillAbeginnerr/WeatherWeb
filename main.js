@@ -8,6 +8,7 @@ audio.play();
        let long = position.coords.longitude; // displays the longitude
      let city = document.getElementById('cityName');
        let climate = document.getElementById('climate');
+       let forecast = document.getElementById('future');
        fetch(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=23Hn5tIlFNLupmd0XJbA2uf1Kq1HRCf8&q=${lat}%2C%20${long}`).then(weather => { 
        return weather.json() }).then(display);
        
@@ -20,8 +21,15 @@ audio.play();
             
         function locate(weathr)
         {
-            climate.innerHTML =`${(weathr[0].Temperature.Metric.Value)}<span>°c</span>`; 
+            climate.innerHTML =`${(weathr[0].Temperature.Metric.Value)}<span>°c</span>` + " ,"+`${weathr[0].WeatherText}`; 
         }
+
+fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/1day/${game}?apikey=%0923Hn5tIlFNLupmd0XJbA2uf1Kq1HRCf8&metric=true`).then( data => data.json()).then(future);
+function future(data)
+{
+    forecast.innerHTML=`${data.DailyForecasts[0].Temperature.Maximum.Value}<span>°c</span>`+ "  " + `${data.DailyForecasts[0].Day.IconPhrase}` ;
+}
+
 
        }
 
