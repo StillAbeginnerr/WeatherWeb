@@ -9,25 +9,30 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <blockquote class="text-2xl font-semibold italic text-center text-slate-900" style="margin-top:30px ;">
+    <blockquote class="font-semibold italic text-center text-slate-900" style="margin-top:30px ;">
         "When the well is
         <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
           <span class="relative text-white">dry</span>
         </span>
-        we know the worth of water."
+       <br><br> we know the worth of water."
       </blockquote>
-   <button class="search rounded-full hvrgrow bg-blue-500 text-green-50 w-40 h-10">Get the Weather</button>
+   <button onclick="getweather()" class="search rounded-full hvrgrow bg-blue-500 text-green-50 w-60 h-10">Get the Weather of your Area</button>
 <div class="Info">
-  <h4 class="city bg-blue-600 text-white">
-    City Name
-  </h4>
-  <h4 class="weather bg-blue-600 text-white">
+  <button id="cityName" class="rounded-full  bg-lime-500 text-green-50 w-60 h-8 mb-7">
+    Area Name
+  </button>
+  <h4 id="climate"class="rounded-full search bg-red-500 text-green-50 w-60 h-8 mb-7" style="text-align:center;">
     Weather
   </h4>
+  
 </div>
+<div id="names" style="position: relative; top:50px; left:120px;">
+  Shivam Agarwal
+</div>
+<footer  class="bg-black h-20 text-white" >
+Created By Shivam Agarwal
+</footer>
 
-
-
-
+<script src="main.js"></script>
 </body>
 </html>

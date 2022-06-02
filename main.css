@@ -1,13 +1,16 @@
 body{
- overflow-x: hidden;
+ overflow: hidden;
     background-image: url("https://github.com/TylerPottsDev/weather-app-js/blob/master/bg.jpg?raw=true");
 }
 
 
 .search{
     position: relative;
-    left: 45%;
+    left: 42%;
     top:50px;
+}
+#names{
+  display: none;
 }
 
 .Info{
@@ -18,7 +21,10 @@ body{
   margin-top: 30px;
 }
 
-
+footer{
+  position:relative; top:320px;
+  text-align: center;
+}
 /* Grow */
 .hvrgrow {
     display: inline-block;
@@ -39,3 +45,29 @@ body{
   
 
 
+@media screen and (max-width:450px) {
+
+  .search{
+    position: relative;
+    left: 12%;
+    top:50px;
+}
+#names{
+display: initial;
+text-align: center;
+font-size: large;
+}
+#cityName{
+  position: relative;
+  right: 40px;
+}
+footer{
+ display: none;
+}
+blockquote{
+  position: relative;
+  right: 40px;
+  font-size: 12px;
+  text-align: center;
+}
+}
