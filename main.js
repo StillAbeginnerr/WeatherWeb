@@ -4,14 +4,23 @@ function getweather()
        
        let lat = position.coords.latitude; // displays the latitude
        let long = position.coords.longitude; // displays the longitude
-       let city = document.getElementById('cityName');
+     let city = document.getElementById('cityName');
        let climate = document.getElementById('climate');
-       fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=c1646a94e55852c9b4208fe7d0591835`).then(weather => { return weather.json() }).then(display);
+       fetch(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=23Hn5tIlFNLupmd0XJbA2uf1Kq1HRCf8&q=${lat}%2C%20${long}`).then(weather => { 
+       return weather.json() }).then(display);
        
        function display(weather)
        {
-           city.innerHTML =`${weather.name}`;
-           climate.innerHTML =`${Math.round(weather.main.temp)/10}<span>°c</span>`; 
+        city.innerHTML =`${weather.EnglishName}`;
+        let game = `${weather.Key}`;
+           fetch(`http://dataservice.accuweather.com/currentconditions/v1/${game}?apikey=23Hn5tIlFNLupmd0XJbA2uf1Kq1HRCf8`).then(weathr => { 
+            return weathr.json() }).then(locate);
+            
+        function locate(weathr)
+        {
+            climate.innerHTML =`${(weathr[0].Temperature.Metric.Value)}<span>°c</span>`; 
+        }
+
        }
 
     });
