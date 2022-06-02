@@ -71,3 +71,30 @@ blockquote{
   text-align: center;
 }
 }
+
+@media screen and (max-width:376px) {
+
+  .search{
+    position: relative;
+    left: 12%;
+    top:50px;
+}
+#names{
+display: initial;
+text-align: center;
+font-size: large;
+}
+#cityName{
+  position: relative;
+  right: 23px;
+}
+footer{
+ display: none;
+}
+blockquote{
+  position: relative;
+  right: 40px;
+  font-size: 12px;
+  text-align: center;
+}
+}

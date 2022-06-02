@@ -1,5 +1,7 @@
 function getweather()
 {
+    var audio = new Audio('button-3.mp3');
+audio.play();
     navigator.geolocation.getCurrentPosition(function(position) { // It fetches the position of your locations 
        
        let lat = position.coords.latitude; // displays the latitude
